@@ -58,11 +58,6 @@ async function getUser() {
     const data = await cars.find()
     return { uname: data[0].user, pass: data[0].price };
 }
-app.get('/', async (req, res) => {
-
-    res.send(200)
-
-});
 
 app.post('/login', async (req, res) => {
     const { uname, pass } = await getUser();
