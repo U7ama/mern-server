@@ -67,13 +67,11 @@ app.get('/', async (req, res) => {
 app.post('/login', async (req, res) => {
     const { uname, pass } = await getUser();
     const { username, password } = req.body;
-    console.log(uname, pass, username, password)
-    res.send(uname, pass, username, password)
+
     user = username;
     // Authenticate user
     if (username === uname && password === pass) {
         // Generate token
-        console.log("I am working")
         const token = jwt.sign({ username }, secretKey, { expiresIn: '1h' });
         res.status(200).json({ token: token });
         // Send
