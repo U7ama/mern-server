@@ -68,6 +68,7 @@ app.post('/login', async (req, res) => {
     const { uname, pass } = await getUser();
     const { username, password } = req.body;
     console.log(uname, pass, username, password)
+    res.send(uname, pass, username, password)
     user = username;
     // Authenticate user
     if (username === uname && password === pass) {
