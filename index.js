@@ -40,7 +40,7 @@ const carSchema = new mongoose.Schema({
 const cars = mongoose.model('cars', carSchema);
 
 mongoose.connect(
-    `mongodb+srv://usama:usama@cluster0.iqyds.mongodb.net/cars?retryWrites=true&w=majority`,
+    `process.env.MONGO_URL`,
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
